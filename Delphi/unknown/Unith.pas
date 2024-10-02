@@ -7,7 +7,14 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Buttons;
 
 type
-  Tiname = class(TForm)
+  KRec = Record
+      NIK : String[10];
+      Nama : String[30];
+      KodeBagian : Integer;
+      GajiPokok : Real;
+      Tunjangan : Real;
+    End;
+  TForm1 = class(TForm)
     inik: TEdit;
     iname: TEdit;
     h1: TLabel;
@@ -18,15 +25,20 @@ type
     lpkok: TLabel;
     ltunjangan: TLabel;
     ltotal: TLabel;
-    opokok: TEdit;
-    otunjangan: TEdit;
-    ototal: TEdit;
+    pokok: TEdit;
+    tunjangan: TEdit;
+    total: TEdit;
     bdaftar: TSpeedButton;
-    bsave: TSpeedButton;
-    breset: TSpeedButton;
-    bclose: TSpeedButton;
+    bsave: TBitBtn;
+    breset: TBitBtn;
+    bclose: TBitBtn;
     procedure bcloseClick(Sender: TObject);
     procedure bresetClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure bdaftarClick(Sender: TObject);
+    procedure pokokChange(Sender: TObject);
+    procedure tunjanganChange(Sender: TObject);
+    procedure bsaveClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -34,25 +46,87 @@ type
   end;
 
 var
-  iname: Tiname;
+  Form1: TForm1;
+  Karyawan : ARray[0..9] of KRec;
+  NoUrut : Integer;
 
 implementation
 
 {$R *.dfm}
 
-procedure Tiname.bcloseClick(Sender: TObject);
+uses Unithh;
+
+procedure TForm1.bcloseClick(Sender: TObject);
 begin
-  application.Terminate;
+   application.Terminate;
 end;
 
-procedure Tiname.bresetClick(Sender: TObject);
+procedure TForm1.bdaftarClick(Sender: TObject);
 begin
+  Form2.ShowModal;
+end;
+
+procedure TForm1.bresetClick(Sender: TObject);
+begin
+  inik.Clear;
+  iname.Clear;
   ibagian.ItemIndex := -1;
-  inik.Text := '';
-  iname.Text := '';
-  opokok.Text := '0';
-  otunjangan.Text := '0';
-  ototal.Text := '0';
+  pokok.Text := '0';
+  tunjangan.Text := '0';
+  total.Text := '0';
+end;
+
+procedure TForm1.bsaveClick(Sender: TObject);
+begin
+  if MessageDlg('Simpan Data?', mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+  begin
+    Karyawan[NoUrut].NIK := inik.Text;
+    Karyawan[NoUrut].Nama := iname.Text;
+    Karyawan[NoUrut].KodeBagian := ibagian.ItemIndex;
+    Karyawan[NoUrut].GajiPokok := StrToFloat(pokok.Text);
+    Karyawan[NoUrut].Tunjangan := StrToFloat(tunjangan.Text);
+
+    NoUrut := NoUrut + 1;
+
+    bresetClick(Self);
+  end;
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+  NoUrut := 0;
+end;
+
+procedure TForm1.pokokChange(Sender: TObject);
+var G, T : Real;
+begin
+  if pokok.Text <> '' then
+    G := StrToFloat(pokok.Text)
+  else
+    G := 0;
+
+  if tunjangan.Text <> '' then
+    T := StrToFloat(tunjangan.Text)
+  else
+    T := 0;
+
+  total.Text := FormatFloat(',0', G + T);
+end;
+
+procedure TForm1.tunjanganChange(Sender: TObject);
+var G, T : Real;
+begin
+  if pokok.Text <> '' then
+    G := StrToFloat(pokok.Text)
+  else
+    G := 0;
+
+  if tunjangan.Text <> '' then
+    T := StrToFloat(tunjangan.Text)
+  else
+    T := 0;
+
+  total.Text := FormatFloat(',0', G + T);
 end;
 
 end.

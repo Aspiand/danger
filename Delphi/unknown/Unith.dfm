@@ -1,7 +1,7 @@
-object iname: Tiname
+object Form1: TForm1
   Left = 0
   Top = 0
-  Caption = 'SCRUD'
+  Caption = 'Input'
   ClientHeight = 352
   ClientWidth = 340
   Color = clBtnFace
@@ -12,6 +12,7 @@ object iname: Tiname
   Font.Style = []
   OldCreateOrder = False
   Position = poDesktopCenter
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object h1: TLabel
@@ -47,29 +48,7 @@ object iname: Tiname
     Width = 75
     Height = 22
     Caption = 'Daftar'
-  end
-  object bsave: TSpeedButton
-    Left = 80
-    Top = 312
-    Width = 74
-    Height = 22
-    Caption = 'Simpan'
-  end
-  object breset: TSpeedButton
-    Left = 160
-    Top = 312
-    Width = 65
-    Height = 22
-    Caption = 'Reset'
-    OnClick = bresetClick
-  end
-  object bclose: TSpeedButton
-    Left = 231
-    Top = 312
-    Width = 58
-    Height = 22
-    Caption = 'Close'
-    OnClick = bcloseClick
+    OnClick = bdaftarClick
   end
   object inik: TEdit
     Left = 80
@@ -128,31 +107,60 @@ object iname: Tiname
       Caption = 'Total'
     end
   end
-  object opokok: TEdit
+  object pokok: TEdit
     Left = 173
     Top = 212
     Width = 116
     Height = 21
-    ReadOnly = True
+    NumbersOnly = True
     TabOrder = 4
-    Text = '0'
+    Text = 'Kntl'
+    OnChange = pokokChange
   end
-  object otunjangan: TEdit
+  object tunjangan: TEdit
     Left = 173
     Top = 239
     Width = 116
     Height = 21
-    ReadOnly = True
+    NumbersOnly = True
     TabOrder = 5
     Text = '0'
+    OnChange = tunjanganChange
   end
-  object ototal: TEdit
+  object total: TEdit
     Left = 173
     Top = 266
     Width = 116
     Height = 21
-    ReadOnly = True
+    NumbersOnly = True
     TabOrder = 6
     Text = '0'
+  end
+  object bsave: TBitBtn
+    Left = 80
+    Top = 303
+    Width = 65
+    Height = 25
+    Caption = 'Simpan'
+    TabOrder = 7
+    OnClick = bsaveClick
+  end
+  object breset: TBitBtn
+    Left = 160
+    Top = 303
+    Width = 65
+    Height = 25
+    Caption = 'Reset'
+    TabOrder = 8
+    OnClick = bresetClick
+  end
+  object bclose: TBitBtn
+    Left = 240
+    Top = 303
+    Width = 65
+    Height = 25
+    Caption = 'Close'
+    TabOrder = 9
+    OnClick = bcloseClick
   end
 end
