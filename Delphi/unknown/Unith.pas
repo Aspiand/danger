@@ -47,7 +47,7 @@ type
 
 var
   Form1: TForm1;
-  Karyawan : ARray[0..9] of KRec;
+  Karyawan : Array[0..9] of KRec;
   NoUrut : Integer;
 
 implementation

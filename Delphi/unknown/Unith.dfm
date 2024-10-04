@@ -55,6 +55,7 @@ object Form1: TForm1
     Top = 56
     Width = 225
     Height = 21
+    NumbersOnly = True
     TabOrder = 0
   end
   object iname: TEdit
@@ -114,7 +115,7 @@ object Form1: TForm1
     Height = 21
     NumbersOnly = True
     TabOrder = 4
-    Text = 'Kntl'
+    Text = '0'
     OnChange = pokokChange
   end
   object tunjangan: TEdit

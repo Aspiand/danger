@@ -21,11 +21,12 @@ type
 
 var
   Form2: TForm2;
-  NoUrut : Integer; // IMPOSTOR
 
 implementation
 
 {$R *.dfm}
+
+uses Unith;
 
 procedure TForm2.bcloseClick(Sender: TObject);
 begin
@@ -51,9 +52,18 @@ var Baris : Integer;
 begin
   for Baris := 0 to NoUrut - 1 do
   begin
-//    Cells[0, Baris + 1] := IntToStr(Baris + 1);
+    with grid do
+    begin
+      Cells[0, Baris + 1] := IntToStr(Baris + 1);
+      Cells[1, Baris + 1] := Karyawan[Baris].NIK;
+      Cells[2, Baris + 1] := Karyawan[Baris].Nama;
+      Cells[3, Baris + 1] := Form1.ibagian.Items[Karyawan[Baris].KodeBagian];
+      Cells[4, Baris + 1] := FormatFloat(',0', Karyawan[Baris].GajiPokok);
+      Cells[5, Baris + 1] := FormatFloat(',0', Karyawan[Baris].Tunjangan);
+      Cells[6, Baris + 1] := FormatFloat(',0', Karyawan[Baris].GajiPokok + Karyawan[Baris].Tunjangan);
+    end;
   end;
-    
+
 end;
 
 end.

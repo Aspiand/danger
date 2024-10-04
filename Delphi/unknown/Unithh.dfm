@@ -2,8 +2,8 @@ object Form2: TForm2
   Left = 0
   Top = 0
   Caption = 'Form2'
-  ClientHeight = 324
-  ClientWidth = 492
+  ClientHeight = 315
+  ClientWidth = 463
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,8 +16,8 @@ object Form2: TForm2
   PixelsPerInch = 96
   TextHeight = 13
   object grid: TStringGrid
-    Left = 8
-    Top = 33
+    Left = -1
+    Top = 35
     Width = 465
     Height = 281
     ColCount = 7
@@ -25,7 +25,7 @@ object Form2: TForm2
     TabOrder = 0
   end
   object bclose: TBitBtn
-    Left = 398
+    Left = 389
     Top = 8
     Width = 75
     Height = 19
