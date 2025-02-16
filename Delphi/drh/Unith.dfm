@@ -1101,8 +1101,8 @@ object FDRH: TFDRH
     Top = 201
     Width = 264
     Height = 21
-    Date = -24.000000000000000000
-    Time = -24.000000000000000000
+    Date = -29.000000000000000000
+    Time = -29.000000000000000000
     TabOrder = 7
   end
   object input_agama: TComboBox
@@ -1110,9 +1110,9 @@ object FDRH: TFDRH
     Top = 241
     Width = 264
     Height = 21
-    ItemIndex = 0
+    ItemIndex = 1
     TabOrder = 8
-    Text = 'Islam'
+    Text = 'Kristen'
     Items.Strings = (
       'Islam'
       'Kristen'

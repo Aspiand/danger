@@ -108,7 +108,6 @@ begin
   batal.Enabled := True;
   tutup.Enabled := True;
 
-
   riwayat.Insert;
 end;
 
