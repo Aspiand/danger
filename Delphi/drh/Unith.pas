@@ -119,11 +119,8 @@ end;
 
 procedure TFDRH.ubah_dataClick(Sender: TObject);
 begin
+  simpan_data.Enabled := True;
   riwayat.Edit;
-end;
-
-procedure clear_input();
-begin
 end;
 
 end.
