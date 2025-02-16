@@ -93,8 +93,8 @@ object MainForm: TMainForm
     Top = 155
     Width = 329
     Height = 21
-    Date = 45705.000000000000000000
-    Time = 0.260864560186746500
+    Date = 12606.000000000000000000
+    Time = 12606.000000000000000000
     TabOrder = 4
   end
   object dokterGrid: TDBGrid
@@ -114,12 +114,14 @@ object MainForm: TMainForm
       item
         Alignment = taCenter
         Expanded = False
+        FieldName = 'nip'
         Title.Alignment = taCenter
         Title.Caption = 'NIP'
         Visible = True
       end
       item
         Expanded = False
+        FieldName = 'nama'
         Title.Alignment = taCenter
         Title.Caption = 'Nama'
         Width = 115
@@ -127,6 +129,7 @@ object MainForm: TMainForm
       end
       item
         Expanded = False
+        FieldName = 'tempat_lahir'
         Title.Alignment = taCenter
         Title.Caption = 'Tempat Lahir'
         Width = 137
@@ -134,6 +137,7 @@ object MainForm: TMainForm
       end
       item
         Expanded = False
+        FieldName = 'tanggal_lahir'
         Title.Alignment = taCenter
         Title.Caption = 'Tanggal Lahir'
         Width = 129
@@ -141,6 +145,7 @@ object MainForm: TMainForm
       end
       item
         Expanded = False
+        FieldName = 'sip'
         Title.Alignment = taCenter
         Title.Caption = 'SIP'
         Width = 76
@@ -184,16 +189,17 @@ object MainForm: TMainForm
     OnClick = cancelButtonClick
   end
   object ADOC: TADOConnection
+    Connected = True
     ConnectionString = 
       'Provider=MSDASQL.1;Password="";Persist Security Info=True;User I' +
       'D=root;Data Source=klinik;Initial Catalog=uts_aspian'
     DefaultDatabase = 'uts_aspian'
     LoginPrompt = False
-    Provider = 'MSDASQL.1'
     Left = 392
     Top = 16
   end
   object dokter: TADOTable
+    Active = True
     Connection = ADOC
     CursorType = ctStatic
     TableName = 'dokter'
@@ -233,8 +239,8 @@ object MainForm: TMainForm
   object BindingsList1: TBindingsList
     Methods = <>
     OutputConverters = <>
-    Left = 484
-    Top = 181
+    Left = 492
+    Top = 165
     object LinkControlToField1: TLinkControlToField
       Category = 'Quick Bindings'
       DataSource = BindSourceDB1
