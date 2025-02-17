@@ -37,10 +37,12 @@ type
     simpanButton: TButton;
     editButton: TButton;
     cancelButton: TButton;
+    hapusButton: TButton;
     procedure cancelButtonClick(Sender: TObject);
     procedure simpanButtonClick(Sender: TObject);
     procedure baruButtonClick(Sender: TObject);
     procedure editButtonClick(Sender: TObject);
+    procedure hapusButtonClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -67,6 +69,11 @@ end;
 procedure TMainForm.editButtonClick(Sender: TObject);
 begin
   dokter.Edit;
+end;
+
+procedure TMainForm.hapusButtonClick(Sender: TObject);
+begin
+  dokter.Delete;
 end;
 
 procedure TMainForm.simpanButtonClick(Sender: TObject);

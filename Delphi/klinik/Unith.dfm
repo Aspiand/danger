@@ -93,8 +93,8 @@ object MainForm: TMainForm
     Top = 155
     Width = 329
     Height = 21
-    Date = 12606.000000000000000000
-    Time = 12606.000000000000000000
+    Date = 96290.000000000000000000
+    Time = 96290.000000000000000000
     TabOrder = 4
   end
   object dokterGrid: TDBGrid
@@ -181,12 +181,21 @@ object MainForm: TMainForm
   end
   object cancelButton: TButton
     Left = 459
-    Top = 123
+    Top = 151
     Width = 75
     Height = 25
     Caption = 'Cancel'
     TabOrder = 9
     OnClick = cancelButtonClick
+  end
+  object hapusButton: TButton
+    Left = 459
+    Top = 120
+    Width = 75
+    Height = 25
+    Caption = 'Hapus'
+    TabOrder = 10
+    OnClick = hapusButtonClick
   end
   object ADOC: TADOConnection
     Connected = True
@@ -239,8 +248,8 @@ object MainForm: TMainForm
   object BindingsList1: TBindingsList
     Methods = <>
     OutputConverters = <>
-    Left = 492
-    Top = 165
+    Left = 476
+    Top = 181
     object LinkControlToField1: TLinkControlToField
       Category = 'Quick Bindings'
       DataSource = BindSourceDB1
