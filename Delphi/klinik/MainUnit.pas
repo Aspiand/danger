@@ -18,6 +18,7 @@ type
     utup1: TMenuItem;
     procedure FormPasien1Click(Sender: TObject);
     procedure utup1Click(Sender: TObject);
+    procedure FormDokter1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -31,7 +32,12 @@ implementation
 
 {$R *.dfm}
 
-uses Pasien;
+uses Pasien, Dokter;
+
+procedure TKlinik.FormDokter1Click(Sender: TObject);
+begin
+  FDokter.ShowModal;
+end;
 
 procedure TKlinik.FormPasien1Click(Sender: TObject);
 begin

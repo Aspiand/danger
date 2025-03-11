@@ -5820,6 +5820,7 @@ object Klinik: TKlinik
       object FormDokter1: TMenuItem
         Caption = 'Form Dokter'
         ShortCut = 16452
+        OnClick = FormDokter1Click
       end
       object utup1: TMenuItem
         Caption = 'Tutup'
