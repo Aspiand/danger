@@ -102,6 +102,14 @@
             <Form>Klinik</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Pasien.pas">
+            <Form>FPasien</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Dokter.pas">
+            <Form>FDokter</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
